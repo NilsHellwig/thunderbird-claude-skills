@@ -1,0 +1,33 @@
+name: Feature request
+description: Suggest a new skill, command or improvement.
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas are welcome! Note the project's invariants: **read-only, offline, standard library only**. Features that would send, move or delete mail, or need third-party packages, are out of scope.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      placeholder: "When I draft replies I often need ..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How could it work? A new tb.py command, a change to a skill, a new skill?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: invariants
+    attributes:
+      label: Invariants
+      options:
+        - label: This feature only reads local data and needs no network access or third-party packages.
+          required: true

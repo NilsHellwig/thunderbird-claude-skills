@@ -1,0 +1,77 @@
+name: Bug report
+description: Something doesn't work as expected (parsing, profile detection, a skill misbehaving).
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! **Please do not paste real emails, addresses or profile files.** Redact or rewrite them with fictional data.
+        If this is a way to modify mail, send mail or reach the network, report it privately instead: see SECURITY.md.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you run or ask, and what was the result?
+      placeholder: "`tb.py search --from alice` returned no results although ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Relevant output (redacted)
+      description: Error messages or tool output. It's formatted as code automatically.
+      render: text
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - tb.py (reading / searching)
+        - guard hook
+        - skill: thunderbird-mail
+        - skill: draft-reply
+        - skill: draft-email
+        - skill: inbox-digest
+        - installation / plugin
+        - other
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Linux (native package)
+        - Linux (Snap)
+        - Linux (Flatpak)
+        - Windows
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Plugin version (`tb.py --version`), Python version, Thunderbird version
+      placeholder: "tb.py 0.1.0, Python 3.12.4, Thunderbird 140.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: store
+    attributes:
+      label: Account type and message store
+      multiple: true
+      options:
+        - IMAP with offline sync
+        - IMAP without offline sync
+        - POP3
+        - Local Folders
+        - mbox store (default)
+        - maildir store
+        - not sure

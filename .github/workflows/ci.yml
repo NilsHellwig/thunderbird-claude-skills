@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Oldest supported Python
+          - { os: ubuntu-22.04, python: "3.8" }
+          - { os: windows-latest, python: "3.8" }
+          # Latest Python
+          - { os: ubuntu-latest, python: "3.x" }
+          - { os: macos-latest, python: "3.x" }
+          - { os: windows-latest, python: "3.x" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+
+  manifests:
+    name: Validate manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check JSON and skill frontmatter
+        run: |
+          python3 - <<'EOF'
+          import json, os, re, sys
+          for f in (".claude-plugin/plugin.json", ".claude-plugin/marketplace.json",
+                    "hooks/hooks.json", "settings.example.json"):
+              json.load(open(f))
+          plugin = json.load(open(".claude-plugin/plugin.json"))
+          for path in plugin["skills"]:
+              text = open(os.path.join(path, "SKILL.md")).read()
+              m = re.match(r"^---\nname: ([\w-]+)\ndescription: .+?\n---\n", text, re.S)
+              assert m, "bad frontmatter in " + path
+              assert m.group(1) == os.path.basename(path), "name mismatch in " + path
+          ver = re.search(r'__version__ = "([^"]+)"', open("scripts/tb.py").read()).group(1)
+          assert ver == plugin["version"], "version mismatch: tb.py %s vs plugin.json %s" % (ver, plugin["version"])
+          print("manifests ok")
+          EOF
