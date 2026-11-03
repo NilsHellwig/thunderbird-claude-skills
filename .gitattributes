@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.py text eol=lf
+# Fixture mailboxes must stay byte-exact (offsets are part of message refs).
+tests/fixtures/** -text
