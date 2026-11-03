@@ -1,0 +1,35 @@
+From - Mon Oct 12 16:00:00 2026
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Message-ID: <older-1@example.com>
+Date: Mon, 12 Oct 2026 16:00:00 +0200
+From: Sam Example <sam@example.com>
+To: Alice Smith <alice@example.net>
+Cc: Team <team@example.com>
+Subject: Slides
+
+Hey Alice,
+
+here are the slides from today.
+
+Cheers
+Sam
+
+From - Mon Nov 02 10:15:00 2026
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Message-ID: <reply-1@example.com>
+Date: Mon, 02 Nov 2026 10:15:00 +0100
+From: Sam Example <sam@example.com>
+To: Alice Smith <alice@example.net>
+Subject: Re: Project kickoff
+In-Reply-To: <kickoff-1@example.net>
+References: <kickoff-1@example.net>
+
+Hey Alice,
+
+Thursday 10am is perfect. I'll send the agenda.
+
+Cheers
+Sam
+

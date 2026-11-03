@@ -1,0 +1,22 @@
+// Mozilla User Preferences
+user_pref("mail.account.account1.identities", "id1");
+user_pref("mail.account.account1.server", "server1");
+user_pref("mail.account.account2.server", "server2");
+user_pref("mail.account.account3.server", "server3");
+user_pref("mail.identity.id1.fullName", "Sam Example");
+user_pref("mail.identity.id1.useremail", "sam@example.com");
+user_pref("mail.identity.id1.organization", "Example Corp");
+user_pref("mail.server.server1.directory-rel", "[ProfD]ImapMail/imap.example.com");
+user_pref("mail.server.server1.hostname", "imap.example.com");
+user_pref("mail.server.server1.name", "sam@example.com");
+user_pref("mail.server.server1.type", "imap");
+user_pref("mail.server.server1.storeContractID", "@mozilla.org/msgstore/berkeleystore;1");
+user_pref("mail.server.server2.directory-rel", "[ProfD]Mail/Local Folders");
+user_pref("mail.server.server2.hostname", "Local Folders");
+user_pref("mail.server.server2.name", "Local Folders");
+user_pref("mail.server.server2.type", "none");
+user_pref("mail.server.server3.directory-rel", "[ProfD]Mail/maildir.example.org");
+user_pref("mail.server.server3.hostname", "maildir.example.org");
+user_pref("mail.server.server3.name", "maildir.example.org");
+user_pref("mail.server.server3.type", "pop3");
+user_pref("mail.server.server3.storeContractID", "@mozilla.org/msgstore/maildirstore;1");
