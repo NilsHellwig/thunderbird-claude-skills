@@ -1,0 +1,17 @@
+{
+  "name": "thunderbird-claude-skills",
+  "owner": {
+    "name": "Nils Hellwig",
+    "url": "https://github.com/NilsHellwig"
+  },
+  "description": "Read-only Thunderbird skills for Claude Code: search and read local mail, draft replies and new emails, summarize your inbox.",
+  "plugins": [
+    {
+      "name": "thunderbird-mail",
+      "source": "./",
+      "description": "Read local Thunderbird mail and draft emails in your own style. Strictly read-only.",
+      "category": "productivity",
+      "keywords": ["thunderbird", "email", "drafting", "read-only"]
+    }
+  ]
+}

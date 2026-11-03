@@ -1,0 +1,26 @@
+{
+  "name": "thunderbird-mail",
+  "version": "0.1.0",
+  "description": "Read your local Thunderbird mail and draft emails in your own style. Strictly read-only: never sends, deletes or modifies mail, never contacts a mail server.",
+  "author": {
+    "name": "Nils Hellwig",
+    "url": "https://github.com/NilsHellwig"
+  },
+  "homepage": "https://github.com/NilsHellwig/thunderbird-claude-skills",
+  "repository": "https://github.com/NilsHellwig/thunderbird-claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "thunderbird",
+    "email",
+    "mail",
+    "drafting",
+    "productivity",
+    "read-only"
+  ],
+  "skills": [
+    "./skills/thunderbird-mail",
+    "./skills/draft-reply",
+    "./skills/draft-email",
+    "./skills/inbox-digest"
+  ]
+}
