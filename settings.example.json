@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(~/Library/Thunderbird/**)",
+      "Write(~/Library/Thunderbird/**)",
+      "Edit(~/.thunderbird/**)",
+      "Write(~/.thunderbird/**)",
+      "Edit(~/snap/thunderbird/**)",
+      "Write(~/snap/thunderbird/**)",
+      "Edit(~/.var/app/org.mozilla.Thunderbird/**)",
+      "Write(~/.var/app/org.mozilla.Thunderbird/**)",
+      "Edit(~/AppData/Roaming/Thunderbird/**)",
+      "Write(~/AppData/Roaming/Thunderbird/**)",
+      "Bash(sendmail:*)",
+      "Bash(mail:*)",
+      "Bash(mailx:*)",
+      "Bash(msmtp:*)",
+      "Bash(mutt:*)",
+      "Bash(neomutt:*)",
+      "Bash(swaks:*)",
+      "Bash(thunderbird:*)",
+      "Bash(osascript:*)",
+      "Bash(open -a Thunderbird:*)"
+    ]
+  }
+}
